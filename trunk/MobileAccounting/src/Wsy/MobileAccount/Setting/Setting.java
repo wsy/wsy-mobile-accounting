@@ -4,6 +4,7 @@
  */
 package Wsy.MobileAccount.Setting;
 
+import Wsy.MobileAccount.Debug;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -35,10 +36,10 @@ abstract class Setting
     }
 
     public void load()
-    {
+    {Debug.show(settingName+"_load");
         try
         {
-            this.rin = RecordStore.openRecordStore(settingName, false);
+            this.rin = RecordStore.openRecordStore(settingName, false);Debug.show(settingName+"_load_openRecordStore");
             this.bin = new ByteArrayInputStream(rin.getRecord(rin.getNextRecordID()));
             this.din = new DataInputStream(bin);
             this.doLoad();

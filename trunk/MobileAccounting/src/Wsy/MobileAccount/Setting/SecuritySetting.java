@@ -1,5 +1,6 @@
 package Wsy.MobileAccount.Setting;
 
+import Wsy.MobileAccount.Debug;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.util.Calendar;
@@ -18,14 +19,14 @@ public class SecuritySetting extends Setting
 
     public SecuritySetting()
     {
-        super("Setting_Security");
+        super("Setting_Security");Debug.show("SecuritySetting_Constructor");
         initDefaultValue();
     }
 
     private void initDefaultValue()
-    {
+    {Debug.show("SecuritySetting_initDefaultValue");
         passwordLockCount = 5;
-        passwdLockMin = 30;
+        passwdLockMin = 30;Debug.show("SecuritySetting_initDefaultValue_InitArray");
         slaveUserAllowedDay = new boolean[]{ true, true, true, true, true, true, true };
         slaveUserAllowedHour = new boolean[]
         {

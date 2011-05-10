@@ -1,5 +1,6 @@
 package Wsy.MobileAccount.Setting;
 
+import Wsy.MobileAccount.Debug;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
@@ -13,12 +14,12 @@ public class StorageSetting extends Setting
 
     public StorageSetting()
     {
-        super("Setting_Storage");
+        super("Setting_Storage");Debug.show("StorageSetting_Constructor");
         initDefaultValue();
     }
 
     private void initDefaultValue()
-    {
+    {Debug.show("StorageSetting_initDefaultValue");
         maxRecordDay = 30;
         maxLogDay = 30;
         forceUnsyncedData = true;

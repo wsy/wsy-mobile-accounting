@@ -1,5 +1,6 @@
 package Wsy.MobileAccount.Setting;
 
+import Wsy.MobileAccount.Debug;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
@@ -10,12 +11,12 @@ public class ViewSetting extends Setting
 
     public ViewSetting()
     {
-        super("Setting_View");
+        super("Setting_View");Debug.show("ViewSetting_Constructor");
         initDefaultValue();
     }
 
     private void initDefaultValue()
-    {
+    {Debug.show("ViewSetting_initDefaultValue");
         defaultView = Enum_FormView.List;
         defaultFilter = Enum_LogFilter.DefaultFilter;
     }

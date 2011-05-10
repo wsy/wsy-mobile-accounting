@@ -1,5 +1,6 @@
 package Wsy.MobileAccount.Setting;
 
+import Wsy.MobileAccount.Debug;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
@@ -11,12 +12,12 @@ public class SyncSetting extends Setting
 
     public SyncSetting()
     {
-        super("Setting_Sync");
+        super("Setting_Sync");Debug.show("SyncSetting_Constructor");
         initDefaultValue();
     }
 
     private void initDefaultValue()
-    {
+    {Debug.show("SyncSetting_initDefaultValue");
         serverAddress = "192.168.137.1:11022";
         syncFreq = 1;
         syncType = Enum_SyncType.DoubleWaySync;
