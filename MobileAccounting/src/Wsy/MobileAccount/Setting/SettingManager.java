@@ -4,6 +4,7 @@ package Wsy.MobileAccount.Setting;
  * 
  * @author WSY
  */
+import Wsy.MobileAccount.Debug;
 public final class SettingManager
 {
     private static LoginSetting loginSetting;
@@ -20,14 +21,14 @@ public final class SettingManager
     }
 
     public static void StaticInitializer()
-    {
+    {Debug.show("SettingManager_StaticInitializer");
         loginSetting = new LoginSetting();
         securitySetting = new SecuritySetting();
         storageSetting = new StorageSetting();
         logSetting = new LogSetting();
         viewSetting = new ViewSetting();
         syncSetting = new SyncSetting();
-        recordSetting = new RecordSetting();
+        recordSetting = new RecordSetting();Debug.show("SettingManager_StaticInitializerFinished");
     }
 
     public static LoginSetting getLoginSetting()
@@ -66,7 +67,7 @@ public final class SettingManager
     }
 
     public static void LoadRMSConfig() throws Exception
-    {
+    {Debug.show("SettingManager_LoadRMSConfig");
         loginSetting.load();
         securitySetting.load();
         storageSetting.load();

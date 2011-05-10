@@ -41,13 +41,13 @@ public class WsyMobileAccount extends MIDlet implements CommandListener
 
     public WsyMobileAccount()
     {Debug.show("Main_Constructor");
-        Initialize_Screen_Splash();Debug.show("Main_ConstructorFinished");
+        Initialize_Screen_Splash();
     }
     // <editor-fold defaultstate="collapsed" desc=" GeneratedMethod ">
     public void startApp()
-    {Debug.show("Debug_startApp");
+    {Debug.show("Main_startApp");
         switchDisplayable(Screen_Splash);
-        Initialize();Debug.show("Debug_startAppFinished");
+        Initialize();
     }
     public void pauseApp(){}
     public void destroyApp(boolean unconditional){notifyDestroyed();}
@@ -55,7 +55,7 @@ public class WsyMobileAccount extends MIDlet implements CommandListener
 
     // <editor-fold defaultstate="collapsed" desc=" PublicMethod ">
     public static String CTS(Calendar Day)
-    {Debug.show("Debug_CTS");
+    {Debug.show("Main_CTS");
         return Day.get(Calendar.YEAR) + "" + (Day.get(Calendar.MONTH) + 1)+ Day.get(Calendar.DAY_OF_MONTH);
     }
 //    public static long CTL(Calendar Day)
@@ -67,14 +67,14 @@ public class WsyMobileAccount extends MIDlet implements CommandListener
 //        Display.getDisplay(this).setCurrent(alert, NextDisplayable);
 //    }
     public void switchDisplayable(Displayable NextDisplayable)
-    {Debug.show("Debug_switchDisplayable");
+    {Debug.show("Main_switchDisplayable");
         Display.getDisplay(this).setCurrent(NextDisplayable);
     }
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc=" Initialize ">
     public void Initialize()
-    {Debug.show("Debug_Initialize");
+    {Debug.show("Main_Initialize");
         Initialize_SettingManager();
         Initialize_LoadConfig();
         Initialize_Screen_Login();
@@ -85,25 +85,25 @@ public class WsyMobileAccount extends MIDlet implements CommandListener
         Initialize_Screen_Setting();
         Initialize_Screen_Input();
         Initialize_Screen_JumpToDate();
-        Initialize_Screen_Alert();Debug.show("Debug_InitializeFinished");
+        Initialize_Screen_Alert();Debug.show("Main_InitializeFinished");
     }
     private void Initialize_StringVaribles()
-    {Debug.show("Debug_InitializeStringVaribles");Debug.show("Debug_StringHoursOfDay");
+    {Debug.show("Main_InitializeStringVaribles");Debug.show("Main_StringHoursOfDay");
         String[] String_HoursOfDay = new String[]
         {
             "0点", "1点", "2点", "3点", "4点", "5点", "6点", "7点", "8点", "9点", "10点","11点","12点",
             "13点", "14点", "15点", "16点", "17点", "18点", "19点","20点", "21点", "22点", "23点"
-        };Debug.show("Debug_StringDaysOfWeek");
+        };Debug.show("Main_StringDaysOfWeek");
         String[] String_DaysOfWeek = new String[]
         {
             "星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"
-        };Debug.show("Debug_StringLogType");
+        };Debug.show("Main_StringLogType");
         String[] String_LogType = new String[]
         {
             "成功的登陆", "失败的登录", "注销", "添加记录", "删改记录", "计划中的清理过期数据", "同步数据",
             "手动删除日志", "更改普通设置", "更改安全设置"
-        };Debug.show("Debug_StringWarning");
-        String[] String_Warning = new String[]{"未知错误！", "用户名或密码错误！", "账户已被锁定！请稍后再试！"};Debug.show("Debug_Item[][]");
+        };Debug.show("Main_StringWarning");
+        String[] String_Warning = new String[]{"未知错误！", "用户名或密码错误！", "账户已被锁定！请稍后再试！"};Debug.show("Main_Item[][]");
         Item_Setting = new Item[][]
         {
             new Item[]
@@ -145,7 +145,7 @@ public class WsyMobileAccount extends MIDlet implements CommandListener
             {
                 new ChoiceGroup("日志记录选项", ChoiceGroup.MULTIPLE,String_LogType, null)
             }
-        };Debug.show("Debug_InitializeStringVaribleFinished");
+        };Debug.show("Main_InitializeStringVaribleFinished");
     }
     private void Initialize_Screen_Splash()
     {Debug.show("Main_Initialize_Screen_Splash");
@@ -162,14 +162,14 @@ public class WsyMobileAccount extends MIDlet implements CommandListener
         catch (Exception e)
         {
             Debug.show(e.toString()); // debug Options;
-        }Debug.show("Debug_InitializeSplashScreenFinished");
+        }Debug.show("Main_InitializeSplashScreenFinished");
     }
     private void Initialize_SettingManager()
-    {Debug.show("Debug_SettingManager");
+    {Debug.show("Main_Initialize_SettingManager");
         SettingManager.StaticInitializer();
     }
     private void Initialize_LoadConfig()
-    {
+    {Debug.show("Main_Initialize_LoadConfig");
         try
         {
             SettingManager.LoadRMSConfig();
@@ -218,10 +218,10 @@ public class WsyMobileAccount extends MIDlet implements CommandListener
     }
     private void Initialize_Screen_Main()
     {
-        Screen_Main = new FormListView();Debug.show("Debug_1");
-        Screen_Main.addCommand(Command_ShowMenu);Debug.show("Debug_2");
-        Screen_Main.addCommand(Command_Exit);Debug.show("Debug_3");
-        Screen_Main.setCommandListener(this);Debug.show("Debug_4");
+        Screen_Main = new FormListView();Debug.show("Main_1");
+        Screen_Main.addCommand(Command_ShowMenu);Debug.show("Main_2");
+        Screen_Main.addCommand(Command_Exit);Debug.show("Main_3");
+        Screen_Main.setCommandListener(this);Debug.show("Main_4");
     }
     private void Initialize_Screen_Menu()
     {

@@ -15,15 +15,15 @@ public class RecordSetting extends Setting
 
     public RecordSetting()
     {
-        super("Setting_Record");
+        super("Setting_Record");Debug.show("RecordSetting_Constructor");
         initDefaultValue();
     }
 
     private void initDefaultValue()
-    {
-        fastRecordNum = 2;
+    {Debug.show("RecordSetting_initDefaultValue");
+        fastRecordNum = 2;Debug.show("RecordSetting_initDefaultValue_InitString");
         recordType = new String[]{ "现金支出", "现金收入", "银行卡支出", "银行卡收入", "内部转账" };
-        fastRecord = new RecordVector();
+        fastRecord = new RecordVector();Debug.show("RecordSetting_initDefaultValue_InitRecordVector");
         fastRecord.addElement(new Record("00000000000", "午饭", 3.6, 0, recordType.length, "备注"));
         fastRecord.addElement(new Record("00000000000", "晚饭", 3.6, 0, recordType.length, "备注"));
     }

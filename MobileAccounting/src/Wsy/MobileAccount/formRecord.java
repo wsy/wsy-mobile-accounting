@@ -5,7 +5,6 @@ package Wsy.MobileAccount;
  * and open the template in the editor.
  */
 
-//import Wsy.MobileAccount.Setting.SettingManager;
 import Wsy.MobileAccount.Setting.SettingManager;
 import java.util.Calendar;
 import javax.microedition.lcdui.*;
