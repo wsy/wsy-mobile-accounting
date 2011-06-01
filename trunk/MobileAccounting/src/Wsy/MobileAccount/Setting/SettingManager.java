@@ -74,7 +74,7 @@ public final class SettingManager
         viewSetting.load();
         syncSetting.load();
         recordSetting.load();
-        logSetting.load();
+        logSetting.load();Debug.show("SettingManager_LoadRMSConfigFinished");
     }
 
     public static void SaveRMSConfig()

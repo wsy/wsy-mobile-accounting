@@ -38,11 +38,13 @@ abstract class Setting
     public void load()
     {Debug.show(settingName+"_load");
         try
-        {
-            this.rin = RecordStore.openRecordStore(settingName, false);Debug.show(settingName+"_load_openRecordStore");
+        {Debug.show(settingName+"_load_openRecordStore");
+            this.rin = RecordStore.openRecordStore(settingName, false);Debug.show(settingName+"_load_InitStream");
             this.bin = new ByteArrayInputStream(rin.getRecord(rin.getNextRecordID()));
-            this.din = new DataInputStream(bin);
+            this.din = new DataInputStream(bin);Debug.show(settingName+"_load_doLoad");
             this.doLoad();
+            this.din.close();
+            this.bin.close();
             this.rin.closeRecordStore();
         } catch (Exception ex)
         {
