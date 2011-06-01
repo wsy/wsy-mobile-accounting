@@ -178,7 +178,7 @@ public class WsyMobileAccount extends MIDlet implements CommandListener
         {
             Initialize_LoadConfig_FirstRun();
         }
-        Record.ReadRMS();
+        Record.ReadRMS();Debug.show("Main_Initialize_LoadConfigFinished");
     }
     private void Initialize_LoadConfig_FirstRun()
     {

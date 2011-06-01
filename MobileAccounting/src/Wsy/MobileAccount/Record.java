@@ -108,16 +108,13 @@ public class Record
     }
 
     public static void ReadRMS()
-    {
+    {Debug.show("Record_ReadRMS");
         // <editor-fold defaultstate="collapsed" desc=" ReadAllRecord ">
         try
-        {
-            RecordStore rin = RecordStore.openRecordStore(
-                    "MobileAccountSettngs", false);
-            ByteArrayInputStream bin = new ByteArrayInputStream(
-                    rin.getRecord(SettingManager.getStorageSetting()
-                            .getCatalogID()));
-            DataInputStream din = new DataInputStream(bin);
+        {Debug.show("Record_ReadRMS_InitializeStream");
+            RecordStore rin = RecordStore.openRecordStore("MobileAccountSettngs", false);
+            ByteArrayInputStream bin = new ByteArrayInputStream(rin.getRecord(SettingManager.getStorageSetting().getCatalogID()));
+            DataInputStream din = new DataInputStream(bin);Debug.show("Record_ReadRMS_BeginRead");
             DayNum = din.readInt();
             if (DayNum == 0)
             {
