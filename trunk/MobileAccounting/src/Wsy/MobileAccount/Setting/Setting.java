@@ -52,12 +52,12 @@ abstract class Setting
     }
 
     public void save()
-    {
+    {Debug.show(settingName+"_Save");
         try
-        {
+        {Debug.show(settingName+"_Save_InitializeStream");
             this.bout = new ByteArrayOutputStream();
             this.dout = new DataOutputStream(bout);
-            this.rout = RecordStore.openRecordStore(settingName, true, RecordStore.AUTHMODE_PRIVATE, true);
+            this.rout = RecordStore.openRecordStore(settingName, true, RecordStore.AUTHMODE_PRIVATE, true);Debug.show(settingName+"_Save_CallSubFunction");
             this.doSave();
             try
             {

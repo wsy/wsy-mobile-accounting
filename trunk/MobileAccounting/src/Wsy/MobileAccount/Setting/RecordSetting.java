@@ -95,28 +95,28 @@ public class RecordSetting extends Setting
     }
 
     protected void doSave()
-    {
+    {Debug.show("RecordSetting_DoSave");
         try
-        {
-            DataOutputStream dout = this.getDataOutputStream();
-            dout.writeInt(fastRecordNum);
+        {Debug.show("RecordSetting_DoSave_InitializeStream");
+            DataOutputStream dout = this.getDataOutputStream();Debug.show("RecordSetting_DoSave_WriteNumberOfFastRecord");
+            dout.writeInt(fastRecordNum);Debug.show("CurrentFastRecordNum="+fastRecordNum);
             for (int i = 0; i < fastRecordNum; i++)
-            {
-                dout.writeUTF(fastRecord.getElement(i).RecordID);
-                dout.writeUTF(fastRecord.getElement(i).Item);
-                dout.writeDouble(fastRecord.getElement(i).Money);
-                dout.writeInt(fastRecord.getElement(i).TypeSrc);
-                dout.writeInt(fastRecord.getElement(i).TypeDst);
-                dout.writeUTF(fastRecord.getElement(i).PostScript);
+            {Debug.show("RecordSetting_DoSave_WriteRecord"+i);Debug.show("RecordSetting_DoSave_WriteRecord"+i+"RecordID"+(fastRecord.getElement(i)));
+                dout.writeUTF(fastRecord.getElement(i).RecordID);Debug.show("RecordSetting_DoSave_WriteRecord"+i+"Item");
+                dout.writeUTF(fastRecord.getElement(i).Item);Debug.show("RecordSetting_DoSave_WriteRecord"+i+"Money");
+                dout.writeDouble(fastRecord.getElement(i).Money);Debug.show("RecordSetting_DoSave_WriteRecord"+i+"TypeSrc");
+                dout.writeInt(fastRecord.getElement(i).TypeSrc);Debug.show("RecordSetting_DoSave_WriteRecord"+i+"TypeDst");
+                dout.writeInt(fastRecord.getElement(i).TypeDst);Debug.show("RecordSetting_DoSave_WriteRecord"+i+"PostScript");
+                dout.writeUTF(fastRecord.getElement(i).PostScript);Debug.show("RecordSetting_DoSave_WriteRecord"+i+"Time.getTime.getTime");
                 dout.writeLong(fastRecord.getElement(i).Time.getTime().getTime());
-            }
+            }Debug.show("RecordSetting_DoSave_WriteRecordTypeLength");
             dout.writeInt(recordType.length);
             for (int i = 0; i < recordType.length; i++)
-            {
+            {Debug.show("RecordSetting_DoSave_WriteRecordType"+i);
                 dout.writeUTF(recordType[i]);
             }
         } catch (Exception e)
-        {
+        {e.toString();e.printStackTrace();
         }
     }
 }
