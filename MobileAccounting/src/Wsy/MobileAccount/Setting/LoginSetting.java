@@ -128,7 +128,7 @@ public class LoginSetting extends Setting
     }
 
     protected void doSave()
-    {
+    {Debug.show("LoginSetting_DoSave");
         try
         {
             DataOutputStream dout = this.getDataOutputStream();
@@ -140,7 +140,7 @@ public class LoginSetting extends Setting
             dout.writeUTF(slaveUserPassword);
             dout.writeUTF(superPassword);
         } catch (Exception e)
-        {
+        {e.toString();e.printStackTrace();
         }
     }
 

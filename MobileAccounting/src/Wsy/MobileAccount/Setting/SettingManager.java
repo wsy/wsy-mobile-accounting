@@ -42,7 +42,7 @@ public final class SettingManager
     }
 
     public static StorageSetting getStorageSetting()
-    {
+    {Debug.show("SettingManager_GetStorageSetting");
         return SettingManager.storageSetting;
     }
 
@@ -78,7 +78,7 @@ public final class SettingManager
     }
 
     public static void SaveRMSConfig()
-    {
+    {Debug.show("SettingManager_SaveRMSConfig");
         loginSetting.save();
         securitySetting.save();
         storageSetting.save();

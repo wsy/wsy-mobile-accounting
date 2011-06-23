@@ -29,7 +29,6 @@ public class Record
     static int DayNum = 0;
     // static boolean EmptyRecord;
     static String DayIndex[];
-    static Record CurrentData[][];
     static int Catalog[][];
     // </editor-fold>
     // <editor-fold defaultstate="collapsed" desc=" Varibles ">
@@ -119,12 +118,12 @@ public class Record
             if (DayNum == 0)
             {
                 DayIndex = null;
-                CurrentData = null;
+                WsyMobileAccount.CurrentData = null;
                 Catalog = null;
             } else
             {
                 DayIndex = new String[DayNum];
-                CurrentData = new Record[DayNum][];
+                WsyMobileAccount.CurrentData = new Record[DayNum][];
                 Catalog = new int[DayNum][];
                 for (int i = 0; i < DayNum; i++)
                 {
@@ -147,9 +146,9 @@ public class Record
                     }
                     din = new DataInputStream(bin);
                     int RecordNumber = din.readInt();
-                    CurrentData[i] = new Record[RecordNumber];
+                    WsyMobileAccount.CurrentData[i] = new Record[RecordNumber];
                     Catalog[i] = new int[RecordNumber];
-                    for (int j = 0; j < CurrentData[i].length; j++)
+                    for (int j = 0; j < WsyMobileAccount.CurrentData[i].length; j++)
                     {
                         try
                         {
@@ -161,7 +160,7 @@ public class Record
                             continue;
                         }
                         din = new DataInputStream(bin);
-                        CurrentData[i][j] = new Record(din.readUTF(),
+                        WsyMobileAccount.CurrentData[i][j] = new Record(din.readUTF(),
                                 din.readUTF(), din.readDouble(), din.readInt(),
                                 din.readInt(), din.readUTF());
                     }
@@ -173,7 +172,7 @@ public class Record
         // </editor-fold>
         // <editor-fold defaultstate="collapsed" desc=" FirstRun ">
         catch (RecordStoreNotFoundException e)
-        {
+        {Debug.show("Record_ReadRMS_FirstRun");
             SettingManager.SaveRMSConfig();
             CreateCatalog();
         } catch (InvalidRecordIDException e)

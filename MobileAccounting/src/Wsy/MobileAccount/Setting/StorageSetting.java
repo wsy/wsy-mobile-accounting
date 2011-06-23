@@ -58,7 +58,7 @@ public class StorageSetting extends Setting
     }
 
     public int getCatalogID()
-    {
+    {Debug.show("StorageSetting_GetCatalogID");
         return catalogID;
     }
 

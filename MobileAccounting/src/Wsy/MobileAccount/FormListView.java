@@ -39,9 +39,9 @@ public class FormListView extends List
         {
             return;
         }
-        for (int i=0;i<Record.CurrentData[DayIndex].length;i++)
+        for (int i=0;i<WsyMobileAccount.CurrentData[DayIndex].length;i++)
         {
-            this.append(Record.CurrentData[DayIndex][i].getShortInfo(), null);
+            this.append(WsyMobileAccount.CurrentData[DayIndex][i].getShortInfo(), null);
         }
     }
 }

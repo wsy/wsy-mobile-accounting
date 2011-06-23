@@ -18,7 +18,7 @@ import org.netbeans.microedition.lcdui.LoginScreen;
 
 public class WsyMobileAccount extends MIDlet implements CommandListener
 {
-    // <editor-fold defaultstate="collapsed" desc=" public_Screens ">
+    // <editor-fold defaultstate="collapsed" desc=" private_Screens ">
     private SplashScreen Screen_Splash;
     private LoginScreen Screen_Login;
     private FormListView Screen_Main;
@@ -38,6 +38,7 @@ public class WsyMobileAccount extends MIDlet implements CommandListener
     public static final Command Command_Exit = new Command("Exit",Command.EXIT, 1);
     // </editor-fold>
     Item[][] Item_Setting;
+    public static Record CurrentData[][];
 
     public WsyMobileAccount()
     {Debug.show("Main_Constructor");
